@@ -15,6 +15,9 @@ export default class Semaille {
     return new Promise((resolve, reject) => {
       this.fetchHome()
       .then(this.fetchProducts.bind(this))
+      .then(products => {
+        this.spinner.succeed(`[semaille] - Fetched ${products.length} products`);
+      })
     })
   }
   
@@ -31,15 +34,18 @@ export default class Semaille {
     let i = 0;
     this.spinner.succeed();
     this.spinner.start(`[semaille] - Fetching items [${i}/${n}]`);
-    products = [products[8]];
+    
+    const increment = () => { 
+      i++; 
+      this.spinner.text = `[semaille] - Fetching items [${i}/${n}]`;
+    } 
 
-    Promise.all( products.map(p => {
-      let item = new SemailleItem(p);
-      return item.fetch();
-    }))
-    .then(products => {
-      this.spinner.stop();
-      console.log('products', products);
+    return new Promise((resolve, reject) => {
+      Promise.all( products.map(p => new SemailleItem(p).fetch(increment)) )
+      .then(products => {
+        products = products.filter( p => p !== null );
+        resolve(products);
+      })
     })
   }
 }

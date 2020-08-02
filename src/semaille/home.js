@@ -4,7 +4,7 @@ import Parser from 'dom-parser'
 export default class SemailleHome {
   init(){
     return new Promise((resolve, reject) => {
-      let qty = 10;
+      let qty = 900;
       let url = `https://www.semaille.com/608-potageres?n=${qty}&orderby=name&orderway=asc`
       
       got(url)

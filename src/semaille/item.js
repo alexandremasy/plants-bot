@@ -13,9 +13,9 @@ export default class SemailleItem {
     this.url = url;
   }
 
-  fetch(){
+  fetch(cb){
     return new Promise((resolve, reject) => {
-      got(this.url, { followRedirect: false })
+      got(this.url)
       .then(response => {
         let body = response.body;
 
@@ -86,6 +86,17 @@ export default class SemailleItem {
               case 'nbre de graines par sachet':
               case 'producteur':
               case 'type de culture': 
+              case 'rendement en kg':
+              case 'culture en pot': 
+              case 'patrimoine légumier régional':
+              case 'variété coureuse':
+              case 'couleur': 
+              case 'variété buissonnante': 
+              case 'durée de culture':
+              case 'sans acidité':
+              case 'chair':
+              case 'plante mellifère': 
+              case 'fleur comestible':
                 break;
               default: 
                 console.log('unhandled key', key, this.name);
@@ -94,9 +105,11 @@ export default class SemailleItem {
             }
           });
 
+          cb();
           resolve(plant);
         }
         catch(err){
+          cb();
           resolve(null);
         }
       })  
@@ -104,6 +117,7 @@ export default class SemailleItem {
         console.log('Error', err);
         console.log('name', this.name);
         console.log('url', this.url);
+        cb();
         resolve(null);
       })
     })
