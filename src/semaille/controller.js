@@ -31,7 +31,7 @@ export default class Semaille {
     let i = 0;
     this.spinner.succeed();
     this.spinner.start(`[semaille] - Fetching items [${i}/${n}]`);
-    products = [products[6]];
+    products = [products[8]];
 
     Promise.all( products.map(p => {
       let item = new SemailleItem(p);
