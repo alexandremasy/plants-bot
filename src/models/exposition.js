@@ -15,4 +15,23 @@ Exposition.Shades = ['shades', 'ombragé']
  */
 Exposition.MiShades = ['mi-shades', 'mi-ombre']
 
+/**
+ * @constant
+ */
+Exposition.ALL = [
+  Exposition.Sun,
+  Exposition.Shades,
+  Exposition.MiShades
+];
+
+/**
+ * Parse the given value to match against the allowed values
+ * 
+ * @param {String} value
+ * @returns {Array.<String>}
+ */
+Exposition.parse = (value) => {
+  return Exposition.ALL.filter( e => e.includes(value) )
+}
+
 export default Exposition

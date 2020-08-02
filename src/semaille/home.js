@@ -2,10 +2,6 @@ import got from 'got'
 import Parser from 'dom-parser'
 
 export default class SemailleHome {
-  constructor() {
-
-  }
-
   init(){
     return new Promise((resolve, reject) => {
       let qty = 10;
@@ -33,7 +29,7 @@ export default class SemailleHome {
 
           // 
           return {
-            href: item.getAttribute('href'),
+            url: item.getAttribute('href'),
             name: title
           }
         });

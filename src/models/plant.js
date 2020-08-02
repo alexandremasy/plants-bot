@@ -1,4 +1,5 @@
-import Harvest from "./harvest";
+import Sowing from './sowing.js'
+import Harvest from './harvest.js'
 
 export default class Plant{
   /**
@@ -10,7 +11,7 @@ export default class Plant{
    * @param {Harvest} args.harvest - The harvest information
    * @param {Array.<String>} args.exposition - The prefered exposition(s)
    */
-  constructor({ latinName, name, sowing, harvest, exposition }){
+  constructor({ latinName, name, sowing = new Sowing({}), harvest = new Harvest({}), exposition }){
     this.latinName = latinName;
     this.name = name;
 
