@@ -20,16 +20,18 @@ export default class SemailleHome {
 
         let items = dom.getElementsByClassName('product_img_link');
         let products = items.map(item => {
+
+          // Title and special chars
           let title = item.getAttribute('title');
           title.split('')
                .map( x => String.fromCharCode(x) )
                .reduce((a, b) => a+b);
 
-          console.log('title', title, title.includes('&#039;'));
           if (title.includes('&#039;')){
             title = title.replace('&#039;', "'")
           }
 
+          // 
           return {
             href: item.getAttribute('href'),
             name: title
