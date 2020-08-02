@@ -36,10 +36,9 @@ export default class SemailleHome {
             href: item.getAttribute('href'),
             name: title
           }
-        })
+        });
 
-        console.log(products);
-        process.exit();
+        resolve(products);
       })
     })
   }
