@@ -1,0 +1,1 @@
+export { default as Semaille } from './controller.js'

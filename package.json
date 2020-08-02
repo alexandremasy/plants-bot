@@ -1,0 +1,20 @@
+{
+  "name": "plants-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "dom-parser": "^0.1.6",
+    "got": "^11.5.1",
+    "ora": "^4.0.5"
+  }
+}
