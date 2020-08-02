@@ -31,15 +31,15 @@ export default class Semaille {
     let i = 0;
     this.spinner.succeed();
     this.spinner.start(`[semaille] - Fetching items [${i}/${n}]`);
-
-    products.length = 1;
+    products = [products[6]];
 
     Promise.all( products.map(p => {
       let item = new SemailleItem(p);
       return item.fetch();
     }))
     .then(products => {
-      console.log('done');
+      this.spinner.stop();
+      console.log('products', products);
     })
   }
 }

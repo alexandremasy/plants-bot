@@ -10,8 +10,9 @@ export default class Plant{
    * @param {Sowing} args.sowing - The sowing information
    * @param {Harvest} args.harvest - The harvest information
    * @param {Array.<String>} args.exposition - The prefered exposition(s)
+   * @param {Array.<String>} args.soil - The prefered soil
    */
-  constructor({ latinName, name, sowing = new Sowing({}), harvest = new Harvest({}), exposition }){
+  constructor({ latinName, name, sowing = new Sowing({}), harvest = new Harvest({}), exposition, soil }){
     this.latinName = latinName;
     this.name = name;
 
@@ -19,5 +20,6 @@ export default class Plant{
     this.harvest = harvest;
 
     this.exposition = exposition;
+    this.soil = soil;
   }
 }

@@ -31,7 +31,7 @@ Exposition.ALL = [
  * @returns {Array.<String>}
  */
 Exposition.parse = (value) => {
-  return Exposition.ALL.filter( e => e.includes(value) )
+  return Exposition.ALL.filter( e => e.filter(item => value.includes(item)).length > 0)
 }
 
 export default Exposition

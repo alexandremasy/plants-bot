@@ -48,7 +48,7 @@ const January = new Month(['january', 'janvier'], 0);
 /**
  * @constant
  */
-const February = new Month(['february', 'fevrier'], 1);
+const February = new Month(['february', 'fevrier', 'février'], 1);
 
 /**
  * @constant
@@ -78,7 +78,7 @@ const July = new Month(['july', 'juillet'], 6);
 /**
  * @constant
  */
-const August = new Month(['august', 'aout'], 7);
+const August = new Month(['august', 'aout', 'août'], 7);
 
 /**
  * @constant
@@ -98,7 +98,7 @@ const November = new Month(['november', 'novembre'], 10);
 /**
  * @constant
  */
-const December = new Month(['december', 'decembre'], 11);
+const December = new Month(['december', 'decembre', 'décembre'], 11);
 
 /**
  * @constant
