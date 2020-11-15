@@ -7,6 +7,7 @@ TODO
 # package generated files
 packages/**/dist
 public/statics/fonts/icons
+semaille.json
 
 # local env files
 .env.local

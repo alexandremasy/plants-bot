@@ -23,7 +23,10 @@ export default class SemailleItem {
           let p = new Parser();
           let dom = p.parseFromString(body);
 
-          let plant = new Plant({name: this.name});
+          let category = this.url.split('/');
+          category = category[3]
+
+          let plant = new Plant({category, name: this.name, url: this.url});
           let table = dom.getElementsByClassName('table-data-sheet')[0];
           let trs = table.getElementsByTagName('tr');
   
